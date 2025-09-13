@@ -1,0 +1,46 @@
+/* ----------------------------------------
+   _breakpoints.scss
+   ----------------------------------------
+   PURPOSE:
+   This file contains all screen size breakpoints
+   and helper mixins for responsive design.
+
+   APPROACH:
+   - Mobile-first: Write styles for mobile by default,
+     then use these mixins to add larger screen rules.
+---------------------------------------- */
+
+/* Breakpoint variables: can adjust later if design changes */
+$bp-sm: 480px;   // Small devices (phones)
+$bp-md: 768px;   // Medium devices (tablets)
+$bp-lg: 1024px;  // Large devices (desktops)
+
+/* 
+   Usage example:
+   .box {
+     @include up-md {
+       background: red; // applies at >= 768px
+     }
+   }
+*/
+
+/* Mixin for small screens and up */
+@mixin up-sm {
+  @media (min-width: #{$bp-sm}) {
+    @content;
+  }
+}
+
+/* Mixin for medium screens and up */
+@mixin up-md {
+  @media (min-width: #{$bp-md}) {
+    @content;
+  }
+}
+
+/* Mixin for large screens and up */
+@mixin up-lg {
+  @media (min-width: #{$bp-lg}) {
+    @content;
+  }
+}

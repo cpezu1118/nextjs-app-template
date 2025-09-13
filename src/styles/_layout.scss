@@ -1,0 +1,39 @@
+/* ----------------------------------------
+   _layout.scss
+   ----------------------------------------
+   PURPOSE:
+   - Provides ready-to-use utility classes.
+   - Saves time by avoiding writing custom CSS for simple layout tweaks.
+---------------------------------------- */
+
+@use './mixins' as *;
+@use './variables' as *;
+
+/* Container utility */
+.container {
+  @include container;
+}
+
+/* Section padding utility */
+.section {
+  @include section-pad-y();
+}
+
+/* Flex helpers */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Spacing helpers */
+.mt-4 { margin-top: $space-4; }
+.mb-4 { margin-bottom: $space-4; }
+.mt-6 { margin-top: $space-6; }
+.mb-6 { margin-bottom: $space-6; }

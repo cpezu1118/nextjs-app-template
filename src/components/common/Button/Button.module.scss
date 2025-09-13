@@ -1,0 +1,59 @@
+/* ----------------------------------------
+   Button.module.scss
+   PURPOSE:
+   - Button component styles using design tokens
+   - Consistent with project's design system
+---------------------------------------- */
+@use '@/styles/variables' as *;
+@use 'sass:color';
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-3 $space-5;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  font-family: $font-body;
+  font-size: $fs-400;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px; // Touch target size
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-accent;
+    outline-offset: 2px;
+  }
+}
+
+.primary {
+  background: $color-accent;
+  color: white;
+
+  &:hover:not(:disabled) {
+    background: color.adjust($color-accent, $lightness: -10%);
+    transform: translateY(-1px);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+}
+
+.secondary {
+  background: transparent;
+  color: $color-text;
+  border-color: $color-text;
+
+  &:hover:not(:disabled) {
+    background: $color-text;
+    color: white;
+  }
+}

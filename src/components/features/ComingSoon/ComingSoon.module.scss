@@ -1,0 +1,133 @@
+/* ComingSoon.module.scss
+   Token-friendly: prefers CSS variables, with fallbacks so it compiles even if tokens aren't wired yet.
+   If you already expose tokens (e.g., in :root), those will be used automatically. */
+
+.wrap {
+  padding: var(--space-8, 4rem) 0;
+}
+
+.flex {
+  display: flex;
+  gap: var(--space-7, 3rem);
+  align-items: flex-start;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+}
+
+.lead {
+  margin-top: var(--space-2, 0.5rem);
+  color: var(--text-muted, #4b5563);
+  font-size: var(--fs-500, 1.125rem);
+  line-height: 1.6;
+}
+
+.image {
+  flex: 1;
+  text-align: center;
+
+  img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md, 0.5rem);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4, 1rem);
+  margin: var(--space-6, 2rem) 0;
+
+  @media (max-width: 520px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-4, 1rem);
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius-md, 0.5rem);
+}
+
+.num {
+  font-size: var(--fs-700, 2rem);
+  font-weight: 700;
+  color: var(--color-accent, #ef4444);
+  line-height: 1;
+  margin-bottom: var(--space-2, 0.5rem);
+}
+
+.label {
+  font-size: var(--fs-300, 0.8125rem);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+
+.form {
+  margin-top: var(--space-6, 2rem);
+  display: flex;
+  gap: var(--space-3, 0.75rem);
+
+  @media (max-width: 520px) {
+    flex-direction: column;
+  }
+}
+
+.input {
+  flex: 1;
+  padding: var(--space-3, 0.75rem) var(--space-4, 1rem);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-md, 0.5rem);
+  font-size: var(--fs-400, 1rem);
+  font-family: var(--font-inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, "Noto Sans", "Helvetica Neue", "Apple Color Emoji", "Segoe UI Emoji");
+  transition: border-color 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-accent, #ef4444);
+  }
+
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.success {
+  margin-top: var(--space-4, 1rem);
+  padding: var(--space-3, 0.75rem) var(--space-4, 1rem);
+  background: color-mix(in srgb, #22c55e 12%, transparent);
+  border: 1px solid color-mix(in srgb, #22c55e 28%, transparent);
+  border-radius: var(--radius-md, 0.5rem);
+  color: #166534;
+
+  p {
+    margin: 0;
+    font-weight: 600;
+  }
+}
+
+/* Local screen-reader utility if you don't have a global one */
+.srOnly {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

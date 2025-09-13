@@ -1,0 +1,40 @@
+/* ----------------------------------------
+   _variables.scss
+   ----------------------------------------
+   PURPOSE:
+   - Define global design tokens like colors, spacing, typography.
+   - Central place to update theme values for the entire project.
+
+   TIP:
+   Changing a value here automatically updates everywhere it's used.
+---------------------------------------- */
+
+/* ----- Colors ----- */
+$color-bg: #ffffff;      // Default background
+$color-text: #111111;    // Default text color
+$color-accent: #e63946;  // Accent color (buttons, highlights)
+
+/* ----- Spacing scale ----- 
+   Use consistent spacing for margins, paddings, gaps, etc.
+*/
+$space-1: .25rem;  // 4px
+$space-2: .5rem;   // 8px
+$space-3: .75rem;  // 12px
+$space-4: 1rem;    // 16px
+$space-5: 1.5rem;  // 24px
+$space-6: 2rem;    // 32px
+$space-7: 3rem;    // 48px
+
+/* ----- Container widths ----- */
+$container-max: 1200px;        // Maximum content width
+$container-pad-mobile: 16px;   // Side padding for mobile
+$container-pad-desktop: 24px;  // Side padding for desktop
+
+/* ----- Fonts ----- */
+$font-body: var(--font-inter), sans-serif;
+$font-heading: var(--font-space-grotesk), sans-serif;
+
+/* ----- Font sizes ----- */
+$fs-900: clamp(2.25rem, 5vw, 3.375rem); // Responsive H1
+$fs-700: clamp(1.75rem, 3.5vw, 2.25rem); // H2
+$fs-400: 1rem; // Body text
